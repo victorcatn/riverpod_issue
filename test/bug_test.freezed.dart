@@ -19,84 +19,6 @@ mixin _$Event {
   EventType get type => throw _privateConstructorUsedError;
   ProviderBase<Object?> get provider => throw _privateConstructorUsedError;
   Object? get value => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $EventCopyWith<Event> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EventCopyWith<$Res> {
-  factory $EventCopyWith(Event value, $Res Function(Event) then) =
-      _$EventCopyWithImpl<$Res, Event>;
-  @useResult
-  $Res call({EventType type, ProviderBase<Object?> provider, Object? value});
-}
-
-/// @nodoc
-class _$EventCopyWithImpl<$Res, $Val extends Event>
-    implements $EventCopyWith<$Res> {
-  _$EventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? provider = null,
-    Object? value = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EventType,
-      provider: null == provider
-          ? _value.provider
-          : provider // ignore: cast_nullable_to_non_nullable
-              as ProviderBase<Object?>,
-      value: freezed == value ? _value.value : value,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_EventCopyWith<$Res> implements $EventCopyWith<$Res> {
-  factory _$$_EventCopyWith(_$_Event value, $Res Function(_$_Event) then) =
-      __$$_EventCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({EventType type, ProviderBase<Object?> provider, Object? value});
-}
-
-/// @nodoc
-class __$$_EventCopyWithImpl<$Res> extends _$EventCopyWithImpl<$Res, _$_Event>
-    implements _$$_EventCopyWith<$Res> {
-  __$$_EventCopyWithImpl(_$_Event _value, $Res Function(_$_Event) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? provider = null,
-    Object? value = freezed,
-  }) {
-    return _then(_$_Event(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EventType,
-      provider: null == provider
-          ? _value.provider
-          : provider // ignore: cast_nullable_to_non_nullable
-              as ProviderBase<Object?>,
-      value: freezed == value ? _value.value : value,
-    ));
-  }
 }
 
 /// @nodoc
@@ -130,12 +52,6 @@ class _$_Event implements _Event {
   @override
   int get hashCode => Object.hash(
       runtimeType, type, provider, const DeepCollectionEquality().hash(value));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_EventCopyWith<_$_Event> get copyWith =>
-      __$$_EventCopyWithImpl<_$_Event>(this, _$identity);
 }
 
 abstract class _Event implements Event {
@@ -150,8 +66,4 @@ abstract class _Event implements Event {
   ProviderBase<Object?> get provider;
   @override
   Object? get value;
-  @override
-  @JsonKey(ignore: true)
-  _$$_EventCopyWith<_$_Event> get copyWith =>
-      throw _privateConstructorUsedError;
 }

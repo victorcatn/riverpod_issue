@@ -67,7 +67,7 @@ enum EventType {
   dispose;
 }
 
-@freezed
+@Freezed(copyWith: false)
 class Event with _$Event {
   const factory Event({
     required EventType type,
